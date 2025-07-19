@@ -84,7 +84,7 @@ function deleteToDoTask(id) {
 
 //save task to the db
 function saveToDoTasks(task) {
-    fetch('http://localhost:3000/tasks', {
+    fetch(dbLink, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(task)
@@ -139,10 +139,10 @@ toDoForm.onsubmit = event => {
         editToDoTask(editIndex, formData) //edit task
     } else {
         formData.isCompleted = false //default task not completed
+        //save to do tasks to database
+        saveToDoTasks(formData)
     }
 
-    //save to do tasks to database.json
-    saveToDoTasks(formData)
     //wait to save task, then get        tasks and render to website 
     setTimeout(getAndRenderTasks, 0)
     toDoForm.reset()
