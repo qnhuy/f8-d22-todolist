@@ -197,6 +197,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
+  position: relative;
+  overflow: visible;
 }
 
 /* Task Cards */
@@ -207,10 +209,12 @@ body {
   background: white;
   transition: box-shadow 0.2s;
   position: relative;
+  z-index: 1;
 }
 
 .task-card:hover {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .task-card.blue {
@@ -264,6 +268,7 @@ body {
   cursor: pointer;
   transition: background-color 0.2s;
   flex-shrink: 0;
+  position: relative;
 }
 
 .task-menu:hover {
@@ -1073,8 +1078,7 @@ body {
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  z-index: 10;
-  overflow: hidden;
+  z-index: 11;
   display: none;
 }
 
@@ -1350,6 +1354,7 @@ body {
   background: white;
   transition: box-shadow 0.2s;
   position: relative;
+  z-index: 1;
 }
 
 .task-card:hover {
@@ -1407,7 +1412,6 @@ body {
   cursor: pointer;
   transition: background-color 0.2s;
   flex-shrink: 0;
-  position: relative;
 }
 
 .task-menu:hover {
