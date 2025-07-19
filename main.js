@@ -79,6 +79,9 @@ function deleteToDoTask(id) {
     if (confirm(`Are you sure to want to delete the task?`)) {
         fetch(dbLink + '/' + id, { method: 'DELETE' })
             .then(() => getAndRenderTasks()) //get tasks and render them
+    } else {
+        const dropDownMenu = $('.dropdown-menu')
+        dropDownMenu.style.display = 'none'
     }
 }
 
